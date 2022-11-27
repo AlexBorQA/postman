@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "3e09a9ed-3828-4435-a861-dccb01c0bd66",
+		"name": "HH_RU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23044175"
+	},
+	"item": [
+		{
+			"name": "Поиск работодателя",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/employers",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"employers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Мешкова",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/employers/?text=бородовских",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"employers",
+						""
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "бородовских"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/employers/?area=3&only_with_vacancies=tru",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"employers",
+						""
+					],
+					"query": [
+						{
+							"key": "area",
+							"value": "3"
+						},
+						{
+							"key": "only_with_vacancies",
+							"value": "tru"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Пагинации",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.hh.ru/employers/?text=такси&page=2&per_page=30",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"employers",
+						""
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "такси"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "per_page",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Инфа о компании",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{khjhk}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.hh.ru/employers/3053510",
+					"protocol": "https",
+					"host": [
+						"api",
+						"hh",
+						"ru"
+					],
+					"path": [
+						"employers",
+						"3053510"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cURL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.2:8080/libs/extjs-plugin/compressed.js?1655930637",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"2"
+					],
+					"port": "8080",
+					"path": [
+						"libs",
+						"extjs-plugin",
+						"compressed.js"
+					],
+					"query": [
+						{
+							"key": "1655930637",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

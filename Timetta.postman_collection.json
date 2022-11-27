@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "3d21c59c-3f3d-4976-978b-4c4b07f889d6",
+		"name": "Timetta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23044175"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "external",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "all offline_access",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "NesterovA@test-task.ru",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "gG9NfM",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://auth.timetta.com/connect/token",
+					"protocol": "https",
+					"host": [
+						"auth",
+						"timetta",
+						"com"
+					],
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Avto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"Access Token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "external",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "all offline_access",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "NesterovA@test-task.ru",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "gG9NfM",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://auth.timetta.com/connect/token",
+					"protocol": "https",
+					"host": [
+						"auth",
+						"timetta",
+						"com"
+					],
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Avto Collection",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" var jsonData = JSON.parse(responseBody);",
+							"pm.collectionVariables.set(\"Access_token\", jsonData.access_token);",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "external",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "all offline_access",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "NesterovA@test-task.ru",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "gG9NfM",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://auth.timetta.com/connect/token",
+					"protocol": "https",
+					"host": [
+						"auth",
+						"timetta",
+						"com"
+					],
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Query ProjectBillingTypes",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/odata/ProjectBillingTypes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"odata",
+						"ProjectBillingTypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Project",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "{{Acces Token}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Alexey Borodovskikh\",\n    \"billingTypeId\": \"e87e0e6b-c034-45ac-8b74-bd0256f3f535\",\n    \"managerId\": \"bcd753cc-0b80-47ae-a471-6ff7f06010e1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/{{puth}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{puth}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Project Random",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"function makeid(length) {",
+							"    var result           = '';",
+							"    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';",
+							"    var charactersLength = characters.length;",
+							"    for ( var i = 0; i < length; i++ ) {",
+							"      result += characters.charAt(Math.floor(Math.random() * ",
+							" charactersLength));",
+							"   }",
+							"   return result;",
+							"}",
+							"var nameid = makeid(8);",
+							"",
+							"pm.collectionVariables.set(\"random_name\", nameid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{random_name}}\",\n    \"billingTypeId\": \"e87e0e6b-c034-45ac-8b74-bd0256f3f535\",\n    \"managerId\": \"bcd753cc-0b80-47ae-a471-6ff7f06010e1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/{{puth}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{puth}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Card Project",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.timetta.com"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkUzQUJEMzAxNzdEMEZDNjU2RDg4MDRFOTQ2RUJFOTdCNTJBRUQ2MzhSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6IjQ2dlRBWGZRX0dWdGlBVHBSdXZwZTFLdTFqZyJ9.eyJuYmYiOjE2NjI4ODE0MTUsImV4cCI6MTY2Mjg4NTAxNSwiaXNzIjoiaHR0cHM6Ly9hdXRoLnRpbWV0dGEuY29tIiwiYXVkIjoid29ya3BvaW50LWFwaSIsImNsaWVudF9pZCI6IndlYl9hcHAiLCJzdWIiOiJOZXN0ZXJvdkFAdGVzdC10YXNrLnJ1IiwiYXV0aF90aW1lIjoxNjYyODgxNDE0LCJpZHAiOiJsb2NhbCIsIm5hbWUiOiLQkNC70LXQutGB0LDQvdC00YAg0J3QtdGB0YLQtdGA0L7QsiIsInRlbmFudCI6InRlc3QtdGFzay5ydSIsImp0aSI6IjA1MDUxM0YwMzgyRTc1QUJCMUQ0MjgxN0JEOTFDRjJBIiwic2lkIjoiNjBCOENGRDFFNDIwRDgyMTg1NzQxNEJBMTMzMDM4NjYiLCJpYXQiOjE2NjI4ODE0MTUsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJhbGwiXSwiYW1yIjpbInB3ZCJdfQ.pClNMqfjaScgq0eQu-XK-eTc4qcbsn1qbaHiaFFFjtXKGu_5FqnyixvthEx1lHJL4lTqaSf_zdRpwXvLOrkNQY6Ff4_RKlvnjAF_CvUVGyeJ-tazfkOw1v4N2SUzkHjzwxYsx-bTPBEEjrGyNG5QA2JaFcPUVnWJnaMyuZ_qsQeSQjlv67Tryv5znEC-25l6wQMCBfPNZpPv9xREQSA0oq5KUlp0lEeRzMLWfvlIuOgaZuxYJ9yLjJtxotO_M2I-8M132lqFcBafN8cpElLKSKppdJAtxOdOg-eL98_dQk4HwSoL8ma1yEEIWy4p2UJoIoMkAc_G5pd51av7ZEuJuA"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "ngsw-bypass",
+						"value": "true"
+					},
+					{
+						"key": "origin",
+						"value": "https://app.timetta.com"
+					},
+					{
+						"key": "referer",
+						"value": "https://app.timetta.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"105\", \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"105\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"60565d47-b18f-4dba-9de1-00495e91ead8\",\n    \"name\": \"Alexey Borodovskikh\",\n    \"code\": null,\n    \"stateId\": \"9752fc91-714a-414f-9c03-8a3a1d6cce06\",\n    \"managerId\": \"14ef4f7f-05ae-4cd1-b6da-a3ad83db2c26\",\n    \"description\": null,\n    \"startDate\": null,\n    \"endDate\": null,\n    \"externalUrl\": null,\n    \"allowTimeEntry\": false,\n    \"skipManagerApprove\": false,\n    \"billingTypeId\": \"e87e0e6b-c034-45ac-8b74-bd0256f3f535\",\n    \"organizationId\": \"76797ca0-dfdc-4138-967a-73eccfb9341c\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}/odata/Projects(60565d47-b18f-4dba-9de1-00495e91ead8)",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"odata",
+						"Projects(60565d47-b18f-4dba-9de1-00495e91ead8)"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "random_name",
+			"value": ""
+		},
+		{
+			"key": "host",
+			"value": "https://api.timetta.com"
+		},
+		{
+			"key": "puth",
+			"value": "odata/Projects"
+		},
+		{
+			"key": "Access_token",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "39295896-6990-4c22-b610-db7170ebda4e",
+		"name": "Staya cURL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23044175"
+	},
+	"item": [
+		{
+			"name": "Staya cURL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.staya.dog"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "cookie",
+						"value": "_ga=GA1.2.1170004841.1661850768; _ym_uid=16618507681015281842; _ym_d=1661850768; _gid=GA1.2.1615241497.1662898010; _gat_UA-144089875-2=1; _ym_isad=2; _ym_visorc=w"
+					},
+					{
+						"key": "origin",
+						"value": "https://staya.dog"
+					},
+					{
+						"key": "referer",
+						"value": "https://staya.dog/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"105\", \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"105\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"borodovskikh@gmail.com\"}"
+				},
+				"url": {
+					"raw": "https://api.staya.dog/v1/auth/password/recovery/request",
+					"protocol": "https",
+					"host": [
+						"api",
+						"staya",
+						"dog"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"password",
+						"recovery",
+						"request"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

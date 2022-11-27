@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "0a1d45d1-9283-4740-bde7-8ae64184ea33",
+		"name": "HeadHunter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23044175"
+	},
+	"item": [
+		{
+			"name": "Тестирование пользовательского интерфейса",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/suggests/skill_set?text=тестирование пользовательского интерфейса",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"suggests",
+						"skill_set"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "тестирование пользовательского интерфейса"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск ID Нижний Новгород",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/suggests/areas?text=Нижний Новгород",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"suggests",
+						"areas"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "Нижний Новгород"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск ID Университета",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/suggests/{{Институт}}?text=Московский финансово-юридический университет (Московская финансово-юридическая академия), Москва",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"suggests",
+						"{{Институт}}"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "Московский финансово-юридический университет (Московская финансово-юридическая академия), Москва"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск метро Нижний Новгород",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/metro/66",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"metro",
+						"66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск информации по Университету",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{Институт}}/39108/faculties",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{Институт}}",
+						"39108",
+						"faculties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Доступные языки HH",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "PHPSESSID=r2t5uvjq435r4q7ib3vtdjq120",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/languages",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"languages"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HH-User-Agent",
+			"value": "borodovskikh@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "https://api.hh.ru"
+		},
+		{
+			"key": "Институт",
+			"value": "educational_institutions"
+		}
+	]
+}

@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "49db9d25-3827-4011-aa99-fef378c39f80",
+		"name": "Starwars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23044175"
+	},
+	"item": [
+		{
+			"name": "People 10",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response must be valid and have a body\",function(){pm.response.to.be.ok;pm.response.to.be.withBody;pm.response.to.be.json;});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}/api/people/10/",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"api",
+						"people",
+						"10",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Starships 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check status\", function() {",
+							"    pm.response.to.have.status(200)",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}/api/starships/5/",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"api",
+						"starships",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planets 7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"All projects is deleted\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    for (var i = 0; i < jsonData.length; i++) {",
+							"        pm.expect(jsonData[i].isDeleted).to.eql(false)",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}/api/planets/7/",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"api",
+						"planets",
+						"7",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Ожидаю статус ответа 200\", function () { pm.response.to.have.status(200); })",
+					"pm.test(\"Content-Type is present\", function () {",
+					"    pm.response.to.have.header(\"Content-Type\");",
+					"});",
+					"pm.test(\"Response time is less than 3000ms\", function () {pm.expect(pm.response.responseTime).to.be.below(3000);});",
+					"",
+					"pm.test(\"Status code name has string\", function () {pm.response.to.have.status(\"OK\");});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Host",
+			"value": "https://swapi.dev"
+		}
+	]
+}
